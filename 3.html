@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script>
+      window.onload = function() {
+        // Month Day, Year Hour:Minute:Second, id-of-element-container
+        countUpFromTime("Mar 29, 2024 12:00:00", 'countup1'); // ****** Change this line!
+      };
+      function countUpFromTime(countFrom, id) {
+        countFrom = new Date(countFrom).getTime();
+        var now = new Date(),
+            countFrom = new Date(countFrom),
+            timeDifference = (now - countFrom);
+          
+        var secondsInADay = 60 * 60 * 1000 * 24,
+            secondsInAHour = 60 * 60 * 1000;
+          
+        days = Math.floor(timeDifference / (secondsInADay) * 1);
+        years = Math.floor(days / 365);
+        if (years > 1){ days = days - (years * 365) }
+        hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+        mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
+        secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
+      
+        var idEl = document.getElementById(id);
+        idEl.getElementsByClassName('days')[0].innerHTML = days;
+        idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+        idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+        idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+      
+        clearTimeout(countUpFromTime.interval);
+        countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+      }
+    </script>
+        <title>i love sailor</title>
+        <link rel="icon" href="https://www.favicon-generator.org/download/2015-01-16/48156aac8afcf65463c9b0efe2b3ecf4.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <style>
+            body {padding: 0px; margin: 0; overflow: hidden;}
+* {transition: all 1s cubic-bezier(.25,.8,.25,1); 
+font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url("https://wallpapers-clan.com/wp-content/uploads/2023/10/pink-hearts-pattern-desktop-wallpaper-preview.jpg");
+
+background-repeat: no-repeat;
+
+background-size: 100% 100%;
+
+
+width: auto;
+}
+
+.screen {height: 100vh; width: 100vw;}
+
+.buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+      padding: 20px;
+}
+
+
+
+.dcard {position: relative; display: block;
+  height: 100vh;
+    width: 100vw;
+ perspective: 800px;
+}
+.col-md-12, .col-md-4 {margin-bottom: 30px;}
+
+.col-md-12 .dcard {perspective: 3000px;}
+
+.frame {display: block; width: 100%;   
+  position: absolute; top: 10%; left: 50%; transform: translateX(-50%);     transform-style: preserve-3d; 
+} 
+
+a.btn {background: #ff0087; border-radius: 30px; color: #000; padding: 10px 20px; line-height: 36px; text-decoration: none; margin: 0px 10px; color: white;} 
+a.btn-ghost {background: #000; border-radius: 30px; color: #ff0087; border: 2px solid #ff0087; padding: 10px 20px;}
+
+p {color: #fff;   
+ width: 80%; display: block; margin: 0 auto;
+  font-size: 50px;
+  font-weight: bold;
+}
+p {
+  transform: translateZ(70px); position: relative;
+}
+
+p:nth-child(1) {
+  color: #fff;
+}
+p:nth-child(2) {
+  color: #fff;
+}
+p:nth-child(3) {
+  color: #fff;
+}
+p:nth-child(4) {
+  color: #fff;
+}
+
+p.underline {font-size: 20px; text-align: center; margin-top: 20px; color: #ffffff;}
+
+.buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+      padding: 10px;
+}
+
+a.btn {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+a {
+    color: white;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+  
+            <div class="screen">
+              <div class="dcard">
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              
+          <div class="card" style="">
+            <div class="frame" align="center">
+              <p class="underline">AND BABEE, SINCE OUR FIRST DAY TOGETHER, WE SPENT:</p>
+              <p id="countup1"><u><span class="timeel days">00</span> days<br><span class="timeel hours">00</span> hrs<br><span class="timeel minutes">00</span> mins<br><span class="timeel seconds">00</span> secs</u></p>
+              <p class="underline">SOOOO MUCH TIME WITH MY BABY!:)<br><br><a href="https://sailorismy.love/4.html">NOWWWWW...</a></p>
+              <br><br><br><br><br>
+            </div>
+            
+          </div>
+              </div>
+             </div>
+            
+            
+  
+          </div>
+          
+    </body>
+</html>
